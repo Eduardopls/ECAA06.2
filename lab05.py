@@ -20,9 +20,9 @@ aderror = 0
 aierror = 0
 
 # Variaveis de controle da distancia --------------------------------
-dkp = 0.8
-dkd = 0.1 
-dki = 0.6
+dkp = 0.85
+dkd = 0.05 
+dki = 0.7
 
 derror = 0
 derrorant = 0
