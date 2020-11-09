@@ -10,7 +10,7 @@ aux_time = 0.341296
 
 
 # Variaveis de controle do angulo -----------------------------------
-akp = 0.02
+akp = 0.04
 akd = 0.02 
 aki = 0.01
 
