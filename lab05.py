@@ -6,7 +6,7 @@ import tf
 import math
 
 # Variavel de frequencia de loop -----------------------------------
-aux_time = 0.05 
+aux_time = 0.341296 
 
 
 # Variaveis de controle do angulo -----------------------------------
