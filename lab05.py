@@ -10,7 +10,7 @@ aux_time = 0.341296
 
 
 # Variaveis de controle do angulo -----------------------------------
-akp = 0.4
+akp = 0.45
 akd = 0.2 
 aki = 0.2
 
@@ -20,7 +20,7 @@ aderror = 0
 aierror = 0
 
 # Variaveis de controle da distancia --------------------------------
-dkp = 0.4
+dkp = 0.8
 dkd = 0.2 
 dki = 0.2
 
