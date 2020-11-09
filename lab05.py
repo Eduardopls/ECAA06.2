@@ -5,6 +5,10 @@ from sensor_msgs.msg import LaserScan
 import tf
 import math
 
+# Variavel de frequencia de loop -----------------------------------
+aux_time = 0.05 
+
+
 # Variaveis de controle do angulo -----------------------------------
 akp = 0.02
 akd = 0.02 
@@ -74,6 +78,7 @@ def controlAngle(setpoint):
     global aerrorant
     global aderror
     global aierror
+    global aux_time
     
     yaw = getAngle(odom)
     aerror = (setpoint - yaw)
@@ -84,9 +89,9 @@ def controlAngle(setpoint):
         else:
             aerror -= 360
     
-    aderror = (aerror - aerrorant)/0.05
+    aderror = (aerror - aerrorant)/aux_time
     
-    aierror += (aerror - aerrorant)*0.05
+    aierror += (aerror - aerrorant)*aux_time
     
     P = akp*aerror
     I = aki*aierror
@@ -108,6 +113,7 @@ def controlVel(setpoint):
     global derrorant
     global dderror
     global dierror
+    global aux_time
     
     scan_len = len(scan.ranges)
     if scan_len > 0:
@@ -115,9 +121,9 @@ def controlVel(setpoint):
         
         derror = -(setpoint - read)
         
-        dderror = (derror - derrorant)/0.05
+        dderror = (derror - derrorant)/aux_time
         
-        dierror += (derror - derrorant)*0.05
+        dierror += (derror - derrorant)*aux_time
         
         P = dkp*derror
         I = dki*dierror
